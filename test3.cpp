@@ -1,34 +1,25 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-//edited on github right now
 
-class Y;
 
-class X{
-    int data;
+class BankDeposit{
+    int principal;
+    int years;
+    float interestRate;
+    float returnValue;
+
     public:
-        void setValue(int value){
-            data = value;
-        }
-    friend void add(X, Y);    
+        BankDeposit(){}
+        BankDeposit(int p, int y, float r); // r can be a value like 0.04
+        BankDeposit(int p, int y, int r); // r can be a value like 14
+        void show();
 };
-
-class Y{
-    int num;
-    public:
-        void setValue(int value){
-            num = value;
-        }
-    friend void add(X, Y);    
-
-};
-
-void add(X o1, Y o2){
-    cout<<"Summing data of X and Y objects gives me "<< o1.data + o2.num;
-}
 
 
 int main()
 {
+    double a = 5;
+    short c = a/100;
+    cout<<c;
     return 0;
 }
