@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+//editer on github right now
 class node;
 
 class human
