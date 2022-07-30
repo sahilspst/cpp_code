@@ -2,17 +2,25 @@
 using namespace std;
 
 
-class BankDeposit{
-    int principal;
-    int years;
-    float interestRate;
-    float returnValue;
-
+class Number{
+    int a;
     public:
-        BankDeposit(){}
-        BankDeposit(int p, int y, float r); // r can be a value like 0.04
-        BankDeposit(int p, int y, int r); // r can be a value like 14
-        void show();
+        Number(){
+            a = 0;
+        }
+
+        Number(int num){
+            a = num;
+        }
+        // When no copy constructor is found, compiler supplies its own copy constructor
+        Number(Number &obj){
+            cout<<"Copy constructor called!!!"<<endl;
+            a = obj.a;
+        }
+
+        void display(){
+            cout<<"The number for this object is "<< a <<endl;
+        }
 };
 
 
