@@ -1,33 +1,52 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+class Employee
+{
 
-class Number{
-    int a;
-    public:
-        Number(){
-            a = 0;
-        }
+public:
+    int id;
+    float salary;
+    /*Employee(int inpId)
+    {
+        id = inpId;
+        salary = 34.0;
+    }*/
 
-        Number(int num){
-            a = num;
-        }
-        // When no copy constructor is found, compiler supplies its own copy constructor
-        Number(Number &obj){
-            cout<<"Copy constructor called!!!"<<endl;
-            a = obj.a;
-        }
-
-        void display(){
-            cout<<"The number for this object is "<< a <<endl;
-        }
+    // Employee(){};
+    void bla()
+    {
+        cout << "blah" << endl;
+    }
 };
 
+// Creating a Programmer class derived from Employee Base class
+class Programmer : public Employee
+{
+public:
+    int languageCode;
+    /*Programmer(int inpId)
+    {
+        //id = inpId;
+        languageCode = 9;
+    }*/
+    void getData()
+    {
+        // cout<<id<<endl;
+    }
+};
 
 int main()
 {
-    double a = 5;
-    short c = a/100;
-    cout<<c;
+
+    // learning inheritance
+
+    Employee e1;
+    Programmer p1;
+    // P1.bla();
+    // P1.print();
+
+    // Employee e1;
+
     return 0;
 }
