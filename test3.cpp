@@ -1,29 +1,32 @@
 #include <iostream>
 using namespace std;
 //edited on github right now
-class node;
 
-class human
-{
-    int a;
-    int b;
-    
-public:
-    int func(node, node);
-    
+class Y;
+
+class X{
+    int data;
+    public:
+        void setValue(int value){
+            data = value;
+        }
+    friend void add(X, Y);    
 };
 
-class node
-{
-    int var1;
-    friend int human::func(node, node);
+class Y{
+    int num;
+    public:
+        void setValue(int value){
+            num = value;
+        }
+    friend void add(X, Y);    
 
-public:
 };
 
-int human::func(node a, node b){
-    return a.var1 + b.var1;
+void add(X o1, Y o2){
+    cout<<"Summing data of X and Y objects gives me "<< o1.data + o2.num;
 }
+
 
 int main()
 {
