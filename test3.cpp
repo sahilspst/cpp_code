@@ -1,52 +1,24 @@
-#include <iostream>
-using namespace std;
+#include <iostream> 
+using namespace std; 
 
-class Employee
-{
 
-public:
-    int id;
-    float salary;
-    /*Employee(int inpId)
-    {
-        id = inpId;
-        salary = 34.0;
-    }*/
-
-    // Employee(){};
-    void bla()
-    {
-        cout << "blah" << endl;
-    }
-};
-
-// Creating a Programmer class derived from Employee Base class
-class Programmer : public Employee
-{
-public:
-    int languageCode;
-    /*Programmer(int inpId)
-    {
-        //id = inpId;
-        languageCode = 9;
-    }*/
-    void getData()
-    {
-        // cout<<id<<endl;
-    }
-};
 
 int main()
 {
-
-    // learning inheritance
-
-    Employee e1;
-    Programmer p1;
-    // P1.bla();
-    // P1.print();
-
-    // Employee e1;
-
+    int a[10];
+	int c = 2;
+    a[-1] = 5;
+    cout<<"Difference = "<<&a[-1] - &c<<endl;
+    // for (int i = 0; i < 20; i++)
+    // {
+    //     cout<<"Before changing "<<&c<<endl;
+    //     a[i-10] = 10;
+    //     cout<<"After changing "<<&a[i]<<endl;
+    //     cout<<"Difference = "<<&a[i] - &c<<endl;
+    // }
+    
+	cout<<c<<endl;
+    // cout<<&a[11]<<endl;
+    // cout<<&c<<endl;
     return 0;
 }

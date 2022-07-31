@@ -1,44 +1,40 @@
 #include<iostream>
 using namespace std;
-
-
-
-void print(int a){
-    cout<<a<<endl;
-}
-
-void print(char a){
-    cout<<a<<endl;
-}
-
-
-
-int main()
-{
-    int a[10] = {2, 9, 4, 8, 12, 14, 18, 4, 2, 5};
-    int ans[10];
-    //for elements except the last one
-    for(int i = 0; i<10; i++){
-        for(int j = i+1; j<10; j++){
-            if(a[i] < a[j]){
-                //cout<<"closest element that is greater than "<<a[i]<<" and is to the right of it is "<<a[j]<<endl;
-                ans[i] = a[j];
-                break;
-            }
-            else {
-                ans[i]= a[i];
-               // break;
-            }
+class BaseClass{
+    public:
+        int var_base;
+        void display(){
+            cout<<"Dispalying Base class variable var_base "<<var_base<<endl;
         }
-    }
+};
 
-    ans[9] = a[9]; //for the last element
-    //printing the array
-    cout<<"{";
-    for(int i = 0; i<10; i++){
-        if(i != 9) cout<<ans[i]<<", ";
-        else cout<<ans[i]<<"}";
-    }
-  
+class DerivedClass : public BaseClass{
+    public:
+            int var_derived;
+            void display(){
+                cout<<"Dispalying Base class variable var_base "<<var_base<<endl;
+                cout<<"Dispalying Derived class variable var_derived "<<var_derived<<endl;
+            }
+};
+
+int main(){
+    BaseClass * base_class_pointer;
+    BaseClass obj_base;
+    DerivedClass obj_derived;
+    base_class_pointer = &obj_derived; // Pointing base class pointer to derived class
+
+    base_class_pointer->var_base = 34;
+    // base_class_pointer->var_derived= 134; // Will throw an error
+    base_class_pointer->display();
+
+    base_class_pointer->var_base = 3400; 
+    base_class_pointer->display();
+
+    DerivedClass * derived_class_pointer;
+    derived_class_pointer = &obj_derived;
+    derived_class_pointer->var_base = 9448;
+    derived_class_pointer->var_derived = 98;
+    derived_class_pointer->display();
+
     return 0;
 }
